@@ -1,0 +1,5 @@
+C:\Users\mani1\source\repos\MoodAnalyser\MoodAnalyseTest\obj\Debug\net6.0\MoodAnalyseTest.csproj.AssemblyReference.cache
+C:\Users\mani1\source\repos\MoodAnalyser\MoodAnalyseTest\obj\Debug\net6.0\MoodAnalyseTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mani1\source\repos\MoodAnalyser\MoodAnalyseTest\obj\Debug\net6.0\MoodAnalyseTest.AssemblyInfoInputs.cache
+C:\Users\mani1\source\repos\MoodAnalyser\MoodAnalyseTest\obj\Debug\net6.0\MoodAnalyseTest.AssemblyInfo.cs
+C:\Users\mani1\source\repos\MoodAnalyser\MoodAnalyseTest\obj\Debug\net6.0\MoodAnalyseTest.csproj.CoreCompileInputs.cache
