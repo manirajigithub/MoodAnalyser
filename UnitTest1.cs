@@ -1,11 +1,56 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MoodAnalyser;
+ using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Mood_Analyser;
+
 
 namespace MoodAnalyseTest
 {
     [TestClass]
     public class UnitTest1
     {
+        string Null = "Its Null";
+        string Empty = "Its Empty";
+
+
+
+        [TestMethod]
+        public void checkEmptyMood()
+        {
+            //To check the test case 
+            //If Empty it return Empty message
+            MoodAnalyse test1 = new MoodAnalyse("");
+            var res1 = test1.AnalyseEmptyMood();
+            string Exp1 = Empty;
+            Assert.AreEqual(Exp1, res1);
+        }
+        [TestMethod]
+        public void checkNullMood()
+        {
+            //To check the test case 
+            //If Null it return Null message
+            MoodAnalyse test2 = new MoodAnalyse(null);
+            var res2 = test2.AnalyseNullMood();
+            string Exp2 = Null;
+            Assert.AreEqual(Exp2, res2);
+
+
+        }
+
+
+
+        [TestMethod]
+
+        //The data in the row is null
+        // Created using DataRow object.
+        [DataRow(null)]
+        
+        public void checkMood(string info)
+        {
+            //To check the test case 
+            //If null it return happy
+            MoodAnalyse test = new MoodAnalyse(info);
+            var res = test.AnalyseMood();
+            Assert.AreEqual("happy", res);
+        }
         [TestMethod]
         public void CheckMoodhappy()
         {
@@ -26,5 +71,47 @@ namespace MoodAnalyseTest
 
             Assert.AreEqual("happy", res1);
         }
+
+        /// <summary>
+        /// Use Reflection to Create MoodAnalyser with default Constructor
+        /// </summary>
+       
+        
+        [TestMethod]
+        public void No_Such_Class()
+        {
+            string exp = "Can't Found This Class ";
+            object obj = null;
+            try
+            {
+                MoodAnalyserFactory test = new MoodAnalyserFactory();
+                obj = test.Mood_Analyser("MoodAnalyser.MoodAnalyser", "MoodAnalyse");
+
+            }
+            catch (Custom_Exception actual)
+
+            {
+                Assert.AreEqual(exp, actual.Message);
+            }
+        }
+      
+        [TestMethod]
+        public void No_Such_Constructor()
+        {
+            string expected = "Can't Found This Constructor ";
+            object obj = null;
+            try
+            {
+                MoodAnalyserFactory test = new MoodAnalyserFactory();
+                obj = test.Mood_Analyser("MoodAnalyser.MoodAnalyser", "MoodAnalyse");
+
+            }
+            catch (Custom_Exception actual)
+            {
+                Assert.AreEqual(expected, actual.Message);
+            }
+        }
+
+
     }
 }
